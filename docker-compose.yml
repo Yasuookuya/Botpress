@@ -1,22 +1,23 @@
 version: "3.9"
 services:
   botpress:
-    build:
-      context: .
-      dockerfile: build/docker/Dockerfile
+    image: botpress/server:latest
     env_file:
       - .env
     environment:
       BP_HOST: 0.0.0.0
       NODE_ENV: production
       BP_IS_DOCKER: "true"
-      PG_HOST: ${PG_HOST:-postgres}
-      PG_PORT: ${PG_PORT:-5432}
-      PG_USER: ${PG_USER:-postgres}
-      PG_PASSWORD: ${PG_PASSWORD:-yourpassword}
-      PG_DB: ${PG_DB:-botpress}
+      PORT: 3000
+      PG_HOST: ${PG_HOST}
+      PG_PORT: ${PG_PORT}
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_DB: ${PG_DB}
     volumes:
       - botpress_data:/botpress/data
+    ports:
+      - "3000:3000"
     expose:
       - "3000"
     restart: unless-stopped

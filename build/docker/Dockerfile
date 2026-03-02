@@ -27,7 +27,7 @@ RUN groupadd -g 999 $BP_GROUP && \
 # Sets ownership of the workdir to the botpress user
 RUN chown -R $BP_USER:$BP_GROUP $BP_WORKDIR
 
-ENV BP_MODULE_NLU_DUCKLINGURL=http://localhost:8000
+ENV BP_MODULE_NLU_DUCKLINGURL=http://localhost:3000
 ENV BP_IS_DOCKER=true
 
 ENV LANG=C.UTF-8

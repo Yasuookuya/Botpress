@@ -38,7 +38,7 @@
       "args": [
         "nlu",
         "--languageURL=http://localhost:3100",
-        "--ducklingURL=http://localhost:8000",
+        "--ducklingURL=http://localhost:3000",
         "--modelCacheSize=1gb",
         "--silent"
       ],
